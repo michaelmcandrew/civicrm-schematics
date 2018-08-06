@@ -1,9 +1,6 @@
 {
   "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
-    "ng-new": {
-      "description": "A blank schematic.",
-      "factory": "./ng-new/index#ngNew"
     },
     },
     },
