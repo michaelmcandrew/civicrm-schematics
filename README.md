@@ -1,28 +1,36 @@
-# Getting Started With Schematics
+# Flow: a CiviCRM user interface built with Angular and Material Design
 
-This repository is a basic Schematic implementation that serves as a starting point to create and publish Schematics to NPM.
+This repository generates a user interface for your CiviCRM site using Angular and Material design. It is a work in progress.
 
-### Testing
+## Requirements
 
-To test locally, install `@angular-devkit/schematics-cli` globally and use the `schematics` command line tool. That tool acts the same as the `generate` command of the Angular CLI, but also has a debug mode.
+- [Angular CLI](https://cli.angular.io/) (`npm install -g @angular/cli`)
+- [Angular schematics](https://blog.angular.io/schematics-an-introduction-dc1dfbc2a2b2) (`npm install -g @angular-devkit/schematics-cli`)
+- [ebb](https://packagist.org/packages/michaelmcandrew/ebb) (`composer global require michaelmcandrew/ebb`)
 
-Check the documentation with
-```bash
-schematics --help
+## Usage
+
+Create a new angular app
+
+```
+$ ng new flow
 ```
 
-### Unit Testing
+Add a schema that represents your CiviCRM site to the root of the app
 
-`npm run test` will run the unit tests, using Jasmine as a runner and test framework.
-
-### Publishing
-
-To publish, simply do:
-
-```bash
-npm run build
-npm publish
+```
+$ cd flow
+$ ebb generate "https://example.org/sites/all/modules/civicrm/extern/rest.php?key=xxx&api_key=xxx" > civicrm-schema.json
 ```
 
-That's it!
- 
+Generate the user interface from the schema
+
+```
+$ schematics flow:all
+```
+
+Run a development server at http://localhost:4200
+
+```
+$ ng serve
+```
