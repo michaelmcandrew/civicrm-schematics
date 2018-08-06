@@ -1,7 +1,7 @@
 {
   "name": "civicrm-schematics",
-  "version": "0.0.0",
-  "description": "A schematics",
+  "version": "0.1.0",
+  "description": "Generates a user interface for a CiviCRM site using Angular and Material design",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "npm run build && jasmine **/*_spec.js"
