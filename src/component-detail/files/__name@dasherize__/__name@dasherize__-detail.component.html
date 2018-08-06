@@ -1,0 +1,11 @@
+<mat-card [class.mat-elevation-z2]>
+  <% if(entity.titleField) { %><mat-card-title>
+    {{ <%= camelize(entity.name) %>.<%= entity.titleField %> }}
+  </mat-card-title>
+  <mat-card-subtitle>
+    <%= classify(entity.name) %>
+  </mat-card-subtitle><% } %>
+  <% for (let field of entity.fields) { %><mat-form-field>
+    <input matInput type="text" placeholder="<%=field.label%>" [(ngModel)]="<%= camelize(entity.name) %>.<%=field.name%>">
+  </mat-form-field><% } %>
+</mat-card>

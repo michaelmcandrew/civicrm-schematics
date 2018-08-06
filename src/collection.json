@@ -1,10 +1,33 @@
 {
   "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
+    "all": {
+      "description": "Generate the complete UI",
+      "factory": "./all"
     },
+    "model": {
+      "description": "Entity model",
+      "factory": "./model/index#model",
     },
+    "entity": {
+      "description": "All schematics for an entity",
+      "factory": "./entity/index#entity",
     },
+    "service": {
+      "description": "Entity service",
+      "factory": "./service/index#service"
     },
+    "component-list": {
+      "description": "Entitiy list",
+      "factory": "./component-list/index#componentList"
     },
+    "component-detail": {
+      "description": "Entity detail view",
+      "factory": "./component-detail/index#componentDetail"
+    },
+    "init": {
+      "description": "Some global initialisations",
+      "factory": "./init/index#init"
+    }
   }
 }

@@ -1,0 +1,5 @@
+<mat-list>
+  <mat-list-item *ngFor="let <%= camelize(name) %> of <%= camelize(name) %>s">
+    {{ <% if(entity.titleField) { %><%= camelize(name) %>.<%= entity.titleField %><% } else { %><%= camelize(name) %>.id<% } %> }}
+ </mat-list-item>
+</mat-list>
