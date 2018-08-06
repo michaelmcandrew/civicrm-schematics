@@ -12,26 +12,26 @@ This repository generates a user interface for your CiviCRM site using Angular a
 
 1. Create a new angular app
 
-```
+```bash
 $ ng new flow
 ```
 
 2. Add a schema that represents your CiviCRM site to the root of the app
 
-```
+```bash
 $ cd flow
 $ ebb generate "https://example.org/sites/all/modules/civicrm/extern/rest.php?key=xxx&api_key=xxx" > civicrm-schema.json
 ```
 
 3. Generate the user interface from the schema
 
-```
+```bash
 $ schematics flow:all
 ```
 
 4. Run a development server at http://localhost:4200
 
-```
+```bash
 $ ng serve
 ```
 
