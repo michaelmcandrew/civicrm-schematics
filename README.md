@@ -26,7 +26,8 @@ $ ebb generate "https://example.org/sites/all/modules/civicrm/extern/rest.php?ke
 3. Generate the user interface from the schema
 
 ```bash
-$ schematics flow:all
+$ schematics civicrm-schematics:credentials --apiUrl="http://dmaster.buildkit:8080/sites/all/modules/civicrm/extern/rest.php?key=xxx&api_key=xxx"
+$ schematics civicrm-schematics:all
 ```
 
 4. Run a development server at http://localhost:4200

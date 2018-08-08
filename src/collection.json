@@ -28,6 +28,10 @@
     "init": {
       "description": "Some global initialisations",
       "factory": "./init/index#init"
+    },
+    "credentials": {
+      "description": "Credentials file",
+      "factory": "./credentials/index#credentials"
     }
   }
 }
