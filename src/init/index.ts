@@ -2,7 +2,9 @@ import {
   Rule,
   SchematicContext,
   Tree,
-  chain
+  chain,
+  url,
+  mergeWith,
 } from "@angular-devkit/schematics";
 import {
   addPackageJsonDependency,
@@ -13,15 +15,18 @@ import { latestVersions } from "@schematics/angular/utility/latest-versions";
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
-export function init(): Rule {
+export function init(options: any): Rule {
   return chain([
     (host: Tree, context: SchematicContext) => {
       addPackageJsonDependency(host, {
         type: NodeDependencyType.Default,
         name: "@angular/material",
         version: latestVersions.Angular
-      });
-      context.addTask(new NodePackageInstallTask());
+      }); //TODO why does this report an update even if the package is already there?
+      if(!options.skipPackageInstall){
+        context.addTask(new NodePackageInstallTask());
+      }
+      return mergeWith(url("./files"));
     }
   ]);
 }
